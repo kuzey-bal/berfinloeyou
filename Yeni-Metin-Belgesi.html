@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berfin Beni Seviyor Musun?</title>
+    <style>
+        /* Genel Stil Ayarları */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Açık Pembe Arka Plan */
+        }
+        /* Başlık Stili */
+        h1 {
+            color: #d81b60; /* Koyu Pembe/Kırmızı Başlık */
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        /* Butonları Tutacak Kutu Stili */
+        .button-container {
+            display: flex;
+            gap: 40px; /* Butonlar Arası Boşluk */
+        }
+        /* Butonların Genel Stili */
+        .button {
+            padding: 20px 40px;
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Butonların Üzerine Gelindiğinde Etkisi */
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* EVET Butonunun Stili */
+        #yes-button {
+            background-color: #4caf50; /* Yeşil */
+        }
+        /* HAYIR Butonunun Stili */
+        #no-button {
+            background-color: #f44336; /* Kırmızı */
+        }
+        /* Mesaj Kutusu Stili */
+        #message {
+            margin-top: 50px;
+            font-size: 1.8em;
+            color: #d81b60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Berfin, Beni Seviyor Musun?</h1>
+    
+    <div class="button-container">
+        <button id="yes-button" class="button" onclick="showMessage('EVET')">EVET</button>
+        <button id="no-button" class="button" onclick="showMessage('HAYIR')">HAYIR</button>
+    </div>
+
+    <div id="message"></div>
+
+    <script>
+        function showMessage(answer) {
+            const messageElement = document.getElementById('message');
+            if (answer === 'EVET') {
+                messageElement.innerHTML = 'Oley! Ben de seni çok seviyorum! ❤️';
+                messageElement.style.color = '#4caf50'; // Yeşil
+            } else {
+                messageElement.innerHTML = 'Üzüldüm... Ama ben seni yine de çok seviyorum! 😔';
+                messageElement.style.color = '#f44336'; // Kırmızı
+            }
+        }
+    </script>
+
+</body>
+</html>
